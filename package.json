@@ -1,0 +1,38 @@
+{
+  "name": "promise-all-soft-fail",
+  "version": "0.0.1",
+  "description": "This functions much like Promise.all() however it does not fail-fast. It executes all the promises and returns the results.",
+  "main": "index.js",
+  "engines": "^6.0.0",
+  "scripts": {
+    "test": "npm run lint && mocha --reporter spec",
+    "lint": "eslint index.js && eslint test/**.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bialesdaniel/promise-all-soft-fail.git"
+  },
+  "keywords": [
+    "Promise",
+    "ES6",
+    "Promise.all"
+  ],
+  "author": "Daniel Biales",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bialesdaniel/promise-all-soft-fail/issues"
+  },
+  "homepage": "https://github.com/bialesdaniel/promise-all-soft-fail#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^3.7.0",
+    "mocha": "^3.1.0"
+  },
+  "eslintConfig": {
+    "env": {
+      "node": true,
+      "es6": true,
+      "mocha": true
+    }
+  }
+}
