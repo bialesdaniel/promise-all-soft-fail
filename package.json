@@ -1,6 +1,6 @@
 {
   "name": "promise-all-soft-fail",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "This functions much like Promise.all() however it does not fail-fast. It executes all the promises and returns the results.",
   "main": "index.js",
   "engines": "^6.0.0",
