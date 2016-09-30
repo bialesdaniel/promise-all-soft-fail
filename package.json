@@ -6,7 +6,8 @@
   "engines": "^6.0.0",
   "scripts": {
     "test": "npm run lint && mocha --reporter spec",
-    "lint": "eslint index.js && eslint test/**.js"
+    "lint": "eslint index.js && eslint test/**.js",
+    "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*"
   },
   "repository": {
     "type": "git",
@@ -25,7 +26,9 @@
   "homepage": "https://github.com/bialesdaniel/promise-all-soft-fail#readme",
   "devDependencies": {
     "chai": "^3.5.0",
+    "coveralls": "^2.11.14",
     "eslint": "^3.7.0",
+    "istanbul": "^0.4.5",
     "mocha": "^3.1.0"
   },
   "eslintConfig": {

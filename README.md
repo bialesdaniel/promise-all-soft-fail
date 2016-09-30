@@ -1,4 +1,6 @@
 [![Coverage Status](https://coveralls.io/repos/github/bialesdaniel/promise-all-soft-fail/badge.svg)](https://coveralls.io/github/bialesdaniel/promise-all-soft-fail)
+[![Build Status](https://travis-ci.org/travis-ci/travis-web.svg?branch=master)](https://travis-ci.org/travis-ci/travis-web)
+
 
 # promise-all-soft-fail
 This functions much like Promise.all() however it does not fail-fast. It executes all the promises and returns the results.
