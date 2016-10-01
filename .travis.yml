@@ -1,16 +1,19 @@
 language: node_js
 node_js:
-  - stable
-
+- stable
 install:
-  - npm install
-
+- npm install
 script:
-  - npm run cover
-
-# Send coverage data to Coveralls
-after_script: "cat coverage/lcov.info | node_modules/coveralls/bin/coveralls.js"
-
+- npm run cover
+deploy:
+  provider: npm
+  email: bialesdaniel@gmail.com
+  api_key:
+    secure: QSN3Och1tX1hEolOup93KUbRd1M/nbuPE7ASoJsrIyIpnID8iJVogxMEoLcqUBbnwixSu7KT9VEBc53HFKItMjGBEOAJihRnT6AD0nTWoFJIROsmI52389LhKu8wXBnSwBz/6xtvpPBJgOjNAMXKkrbRm4Bh4eeL3EkkcDGFVXdHy2ZlI6+gjP60tROIV3BrM6bbsE2MQef/FlBRmr/+Lq1u5SDYzIUkh84TQcwaVaCtGvQQae1cpcg5n5PXvVMHebBH/PvK1JABxVqu+T2WEs6I0KpXAH0e5SYYcNmQIbHGPLzWvWRb4kQvzVIWXzPwSbtBuyDfagg5OzUm6OuYy2t9CqXS6D+qXipE3n6Sb7mf0VepqR8iDRJg4lCWncC/L10XioBEzNnNXuyKDm4q/BjuxdgyJ02/8ryRGfmym5l9AozFDwzwZhXres5xo/e5PS37ufezBitEasHQOhLJL8khuxQqfSK1DpLdXTzOLxwu5Y9mlopxe3ky2YC8CgDjkZVvEDf5kh21BpxwSGhNyjpxhIdVVWVpmVs/e0lGpyOVqeTa1X5CEIBBm9epvLbX5KJf8+F3qZgL+LVKY/PyyR7YALVAjqiBULmt3WoglRhKv6YIoEh7KPYqjtF0QhFGMJFnprEZQAX0AQsVmaLnd7WVfyGnKk8nDqlvHz+tLos=
+  on:
+    tags: true
+    repo: bialesdaniel/promise-all-soft-fail
+after_script: cat coverage/lcov.info | node_modules/coveralls/bin/coveralls.js
 notifications:
   email:
-    - bialesdaniel@gmail.com
+  - bialesdaniel@gmail.com
