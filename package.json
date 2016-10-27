@@ -7,7 +7,7 @@
   "scripts": {
     "test": "npm run lint && mocha --reporter spec",
     "lint": "eslint index.js && eslint test/**.js",
-    "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*"
+    "cover": "npm run lint && node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*"
   },
   "repository": {
     "type": "git",

@@ -1,5 +1,6 @@
+[![npm version](https://badge.fury.io/js/promise-all-soft-fail.svg)](https://badge.fury.io/js/promise-all-soft-fail)
 [![Coverage Status](https://coveralls.io/repos/github/bialesdaniel/promise-all-soft-fail/badge.svg?branch=master)](https://coveralls.io/github/bialesdaniel/promise-all-soft-fail?branch=master)
-[![Build Status](https://travis-ci.org/travis-ci/travis-web.svg?branch=master)](https://travis-ci.org/travis-ci/travis-web)
+[![Build Status](https://travis-ci.org/bialesdaniel/promise-all-soft-fail.svg?branch=master)](https://travis-ci.org/bialesdaniel/promise-all-soft-fail)
 
 
 # promise-all-soft-fail

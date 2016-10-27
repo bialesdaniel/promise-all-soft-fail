@@ -17,90 +17,83 @@ describe('promise-all-soft-fail', ()=> {
     }
   });
 
-  it('all promises resolve', (done)=> {
+  it('all promises resolve', ()=> {
     let expectedResult = [true, true, true];
-    promiseAllSoftFail(promiseArray.map((promise)=>promise())).then((result)=> {
+    return promiseAllSoftFail(promiseArray.map((promise)=>promise())).then((result)=> {
       assert.isArray(result, 'promise all result was an array');
       assert.deepEqual(result, expectedResult, 'all promises resolved');
-      done();
     }).catch((err)=> {
-      done(err);
+      assert.fail(err);
     });
   });
 
-  it('first promise fails, the rest resolve', (done)=> {
+  it('first promise fails, the rest resolve', ()=> {
     let expectedResult = [false, true, true];
     promiseArray[0] = ()=>Promise.reject(false);
-    promiseAllSoftFail(promiseArray.map((promise)=>promise())).then((result)=> {
+    return promiseAllSoftFail(promiseArray.map((promise)=>promise())).then((result)=> {
       assert.isArray(result, 'promise all result was an array');
       assert.deepEqual(result, expectedResult, 'all promises resolved');
-      done();
     }).catch((err)=> {
-      done(err);
+      assert.fail(err);
     });
   });
 
-  it('second promise fails, the rest resolve', (done)=> {
+  it('second promise fails, the rest resolve', ()=> {
     let expectedResult = [true, false, true];
     promiseArray[1] = ()=>Promise.reject(false);
-    promiseAllSoftFail(promiseArray.map((promise)=>promise())).then((result)=> {
+    return promiseAllSoftFail(promiseArray.map((promise)=>promise())).then((result)=> {
       assert.isArray(result, 'promise all result was an array');
       assert.deepEqual(result, expectedResult, 'all promises resolved');
-      done();
     }).catch((err)=> {
-      done(err);
+      assert.fail(err);
     });
   });
 
-  it('third promise fails, the rest resolve', (done)=> {
+  it('third promise fails, the rest resolve', ()=> {
     let expectedResult = [true, true, false];
     promiseArray[2] = ()=>Promise.reject(false);
-    promiseAllSoftFail(promiseArray.map((promise)=>promise())).then((result)=> {
+    return promiseAllSoftFail(promiseArray.map((promise)=>promise())).then((result)=> {
       assert.isArray(result, 'promise all result was an array');
       assert.deepEqual(result, expectedResult, 'all promises resolved');
-      done();
     }).catch((err)=> {
-      done(err);
+      assert.fail(err);
     });
   });
 
-  it('first and second promise fails, the rest resolve', (done)=> {
+  it('first and second promise fails, the rest resolve', ()=> {
     let expectedResult = [false, false, true];
     promiseArray[0] = ()=>Promise.reject(false);
     promiseArray[1] = ()=>Promise.reject(false);
-    promiseAllSoftFail(promiseArray.map((promise)=>promise())).then((result)=> {
+    return promiseAllSoftFail(promiseArray.map((promise)=>promise())).then((result)=> {
       assert.isArray(result, 'promise all result was an array');
       assert.deepEqual(result, expectedResult, 'all promises resolved');
-      done();
     }).catch((err)=> {
-      done(err);
+      assert.fail(err);
     });
   });
 
-  it('second and third promise fails, the rest resolve', (done)=> {
+  it('second and third promise fails, the rest resolve', ()=> {
     let expectedResult = [true, false, false];
     promiseArray[1] = ()=>Promise.reject(false);
     promiseArray[2] = ()=>Promise.reject(false);
-    promiseAllSoftFail(promiseArray.map((promise)=>promise())).then((result)=> {
+    return promiseAllSoftFail(promiseArray.map((promise)=>promise())).then((result)=> {
       assert.isArray(result, 'promise all result was an array');
       assert.deepEqual(result, expectedResult, 'all promises resolved');
-      done();
     }).catch((err)=> {
-      done(err);
+      assert.fail(err);
     });
   });
 
-  it('all promises fail', (done)=> {
+  it('all promises fail', ()=> {
     let expectedResult = [false, false, false];
     promiseArray[0] = ()=>Promise.reject(false);
     promiseArray[1] = ()=>Promise.reject(false);
     promiseArray[2] = ()=>Promise.reject(false);
-    promiseAllSoftFail(promiseArray.map((promise)=>promise())).then((result)=> {
+    return promiseAllSoftFail(promiseArray.map((promise)=>promise())).then((result)=> {
       assert.isArray(result, 'promise all result was an array');
       assert.deepEqual(result, expectedResult, 'all promises resolved');
-      done();
     }).catch((err)=> {
-      done(err);
+      assert.fail(err,expectedResult,err);
     });
   });
 });
