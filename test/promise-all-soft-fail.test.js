@@ -3,8 +3,8 @@
  */
 'use strict';
 
-var assert = require('chai').assert;
-var promiseAllSoftFail = require('../index');
+const assert = require('chai').assert;
+const promiseAllSoftFail = require('../index').promiseAllSoftFail;
 
 describe('promise-all-soft-fail', ()=> {
   let promiseArray;
@@ -22,8 +22,6 @@ describe('promise-all-soft-fail', ()=> {
     return promiseAllSoftFail(promiseArray.map((promise)=>promise())).then((result)=> {
       assert.isArray(result, 'promise all result was an array');
       assert.deepEqual(result, expectedResult, 'all promises resolved');
-    }).catch((err)=> {
-      assert.fail(err);
     });
   });
 
@@ -33,8 +31,6 @@ describe('promise-all-soft-fail', ()=> {
     return promiseAllSoftFail(promiseArray.map((promise)=>promise())).then((result)=> {
       assert.isArray(result, 'promise all result was an array');
       assert.deepEqual(result, expectedResult, 'all promises resolved');
-    }).catch((err)=> {
-      assert.fail(err);
     });
   });
 
@@ -44,8 +40,6 @@ describe('promise-all-soft-fail', ()=> {
     return promiseAllSoftFail(promiseArray.map((promise)=>promise())).then((result)=> {
       assert.isArray(result, 'promise all result was an array');
       assert.deepEqual(result, expectedResult, 'all promises resolved');
-    }).catch((err)=> {
-      assert.fail(err);
     });
   });
 
@@ -55,8 +49,6 @@ describe('promise-all-soft-fail', ()=> {
     return promiseAllSoftFail(promiseArray.map((promise)=>promise())).then((result)=> {
       assert.isArray(result, 'promise all result was an array');
       assert.deepEqual(result, expectedResult, 'all promises resolved');
-    }).catch((err)=> {
-      assert.fail(err);
     });
   });
 
@@ -67,8 +59,6 @@ describe('promise-all-soft-fail', ()=> {
     return promiseAllSoftFail(promiseArray.map((promise)=>promise())).then((result)=> {
       assert.isArray(result, 'promise all result was an array');
       assert.deepEqual(result, expectedResult, 'all promises resolved');
-    }).catch((err)=> {
-      assert.fail(err);
     });
   });
 
@@ -79,8 +69,6 @@ describe('promise-all-soft-fail', ()=> {
     return promiseAllSoftFail(promiseArray.map((promise)=>promise())).then((result)=> {
       assert.isArray(result, 'promise all result was an array');
       assert.deepEqual(result, expectedResult, 'all promises resolved');
-    }).catch((err)=> {
-      assert.fail(err);
     });
   });
 
@@ -92,8 +80,6 @@ describe('promise-all-soft-fail', ()=> {
     return promiseAllSoftFail(promiseArray.map((promise)=>promise())).then((result)=> {
       assert.isArray(result, 'promise all result was an array');
       assert.deepEqual(result, expectedResult, 'all promises resolved');
-    }).catch((err)=> {
-      assert.fail(err,expectedResult,err);
     });
   });
 });

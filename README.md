@@ -13,16 +13,30 @@ This functions much like Promise.all() however it does not fail-fast. It execute
 
 ## Usage
 
-    var promiseAllSoftFail = require('promise-all-soft-fail');
+####promiseAllSoftFail([promiseArray])
+This functions much like Promise.all() however it does not fail-fast. It executes all the promises and returns the results.
+
+    let promiseAllSoftFail = require('promise-all-soft-fail').promiseAllSoftFail;
 
     promiseAllSoftFail([Promise.resolve(true),Promise.reject(false)]).then((result)=>{
-      console.log(result) //This will print [true,false]
+      console.log(result); //This will print [true,false]
     });
+####promiseAllSoftFailSync([promiseArray])
+This executes all the promises in an array in sequential order. It will execute all the promises whether they resolve or reject. This returns an array of the resolved or rejected values.
 
+    let promiseAllSoftFailSync = require('promise-all-soft-fail').promiseAllSoftFailSync;
+
+    promiseAllSoftFailSync([Promise.resolve(1),Promise.reject(2),Promise.resolve(3)]).then((result)=>{
+      console.log(result); //This will print [1,2,3]
+    });
 
 ## Tests
 
+  Test
   `npm test`
+
+  Coverage
+  `npm run cover`
 
 ## Contributing
 
