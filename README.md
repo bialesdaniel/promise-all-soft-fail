@@ -4,7 +4,7 @@
 
 
 # promise-all-soft-fail
-This functions much like Promise.all() however it does not fail-fast. It executes all the promises and returns the results.
+This function is designed to add some functionality to the standard Promise.all() that we have come to know and love
 
 
 ## Installation
