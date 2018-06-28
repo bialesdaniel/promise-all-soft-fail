@@ -13,7 +13,7 @@ This function is designed to add some functionality to the standard Promise.all(
 
 ## Usage
 
-####promiseAllSoftFail([promiseArray])
+#### promiseAllSoftFail([promiseArray])
 This functions much like Promise.all() however it does not fail-fast. It executes all the promises and returns the results.
 
     let promiseAllSoftFail = require('promise-all-soft-fail').promiseAllSoftFail;
@@ -21,7 +21,7 @@ This functions much like Promise.all() however it does not fail-fast. It execute
     promiseAllSoftFail([Promise.resolve(true),Promise.reject(false)]).then((result)=>{
       console.log(result); //This will print [true,false]
     });
-####promiseAllSoftFailSync([promiseArray])
+#### promiseAllSoftFailSync([promiseArray])
 This executes all the promises in an array in sequential order. It will execute all the promises whether they resolve or reject. This returns an array of the resolved or rejected values.
 
     let promiseAllSoftFailSync = require('promise-all-soft-fail').promiseAllSoftFailSync;
